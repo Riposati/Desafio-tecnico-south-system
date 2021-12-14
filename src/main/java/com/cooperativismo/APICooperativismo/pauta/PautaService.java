@@ -28,4 +28,23 @@ public class PautaService {
 		}
 		pautaRepository.save(pauta);
 	}
+
+	public Optional<Pauta> getPauta(Long id) {
+		
+		Optional<Pauta> pautaOptional = pautaRepository.findById(id);
+		
+		if(pautaOptional.isPresent()) {
+			return pautaOptional;
+		}else {
+			throw new IllegalStateException("Pauta não existe!");
+		}
+		
+//		try {
+//			return pautaRepository.findById(id);
+//		} catch (ApiException apiException) {
+//			throw apiException;
+//		} catch (Exception exception) {
+//			throw new ApiException(exception.getMessage(), exception);
+//		}
+	}
 }

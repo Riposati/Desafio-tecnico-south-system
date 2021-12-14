@@ -64,6 +64,7 @@ public class VotoService {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private boolean validaSePodeVotarPorCpf(Voto voto) {
 
 		String url = "https://user-info.herokuapp.com/users/" + voto.getAssociado().getCpf();
@@ -81,5 +82,10 @@ public class VotoService {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	
+	public Long getVotosPauta(Long id) {		
+		return votoRepository.findAllEnabled(id);
 	}
 }

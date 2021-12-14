@@ -1,9 +1,11 @@
 package com.cooperativismo.APICooperativismo.pauta;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,12 @@ public class PautaController {
 	@ApiOperation(value = "Retorna todas as pautas")
 	public List<Pauta> getPautas() {
 		return pautaService.getPautas();
+	}
+
+	@GetMapping("/{id}")
+	@ApiOperation(value = "Retorna uma pauta")
+	public Optional<Pauta> getPauta(@PathVariable("id") Long id) {
+		return pautaService.getPauta(id);
 	}
 
 	@PostMapping

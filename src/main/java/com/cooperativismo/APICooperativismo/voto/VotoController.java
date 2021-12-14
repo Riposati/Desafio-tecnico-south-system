@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,12 @@ public class VotoController {
 	@ApiOperation(value = "Retorna todos os votos")
 	public List<Voto> getVotos() {
 		return votoService.getVotos();
+	}
+	
+	@GetMapping("/pauta/{idPauta}")
+	@ApiOperation(value = "Retorna os votos de uma pauta a partir do ID da pauta")
+	public Long getVotosPauta(@PathVariable("idPauta") Long id) {
+		return votoService.getVotosPauta(id);
 	}
 	
 	@PostMapping()
