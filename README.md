@@ -24,6 +24,7 @@ Integrar com um sistema que verifique, a partir do CPF do associado, se ele pode
 GET https://user-info.herokuapp.com/users/{cpf}
 Caso o CPF seja inválido, a API retornará o HTTP Status 404 (Not found). Você pode usar geradores de CPF para gerar CPFs válidos;
 Caso o CPF seja válido, a API retornará se o usuário pode (ABLE_TO_VOTE) ou não pode (UNABLE_TO_VOTE) executar a operação Exemplos de retorno do serviço
+
 Tarefa Bônus 2 - Mensageria e filas
 Classificação da informação: Uso Interno O resultado da votação precisa ser informado para o restante da plataforma, isso deve ser feito preferencialmente através de mensageria. Quando a sessão de votação fechar, poste uma mensagem com o resultado da votação.
 
