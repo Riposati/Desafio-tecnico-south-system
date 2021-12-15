@@ -46,8 +46,3 @@ Como você versionaria a API da sua aplicação? Que estratégia usar?
 - Documentação do código e da API
 - Logs da aplicação
 - Mensagens e organização dos commits
-
-### Observações importantes
-- Não inicie o teste sem sanar todas as dúvidas
-- Iremos executar a aplicação para testá-la, cuide com qualquer dependência externa e deixe claro caso haja instruções especiais para execução do mesmo
-- Teste bem sua solução, evite bugs
