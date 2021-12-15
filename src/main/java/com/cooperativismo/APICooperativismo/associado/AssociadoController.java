@@ -17,10 +17,10 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("cooperativismo/associado")
 public class AssociadoController {
 
-	private final AssociadoService associadoService;
+	private final AssociadoServiceImpl associadoService;
 
 	@Autowired
-	public AssociadoController(AssociadoService associadoService) {
+	public AssociadoController(AssociadoServiceImpl associadoService) {
 		this.associadoService = associadoService;
 	}
 

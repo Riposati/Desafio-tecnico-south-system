@@ -18,10 +18,10 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("cooperativismo/voto")
 public class VotoController {
 
-	private final VotoService votoService;
+	private final VotoServiceImpl votoService;
 
 	@Autowired
-	public VotoController(VotoService votoService) {
+	public VotoController(VotoServiceImpl votoService) {
 		this.votoService = votoService;
 	}
 

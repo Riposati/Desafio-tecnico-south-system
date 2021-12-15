@@ -19,10 +19,10 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("cooperativismo/pauta")
 public class PautaController {
 
-	private final PautaService pautaService;
+	private final PautaServiceImpl pautaService;
 
 	@Autowired
-	public PautaController(PautaService pautaService) {
+	public PautaController(PautaServiceImpl pautaService) {
 		this.pautaService = pautaService;
 	}
 
