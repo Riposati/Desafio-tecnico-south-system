@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cooperativismo.APICooperativismo.tratamentoErros.ApiException;
+
 @Service
 public class PautaService {
 
@@ -17,34 +19,31 @@ public class PautaService {
 	}
 
 	public List<Pauta> getPautas() {
-		return pautaRepository.findAll();
+		try {
+			return pautaRepository.findAll();
+		} catch (ApiException apiException) {
+			throw apiException;
+		} catch (Exception exception) {
+			throw new ApiException(exception.getMessage(), exception);
+		}
 	}
 
 	public void addNewPauta(Pauta pauta) {
 		Optional<Pauta> pautaOptional = pautaRepository.findPautaByDescricao(pauta.getDescricao());
 
 		if (pautaOptional.isPresent()) {
-			throw new IllegalStateException("Pauta já aberta!");
+			throw new IllegalStateException("Pauta inválida - Pauta já aberta!");
 		}
 		pautaRepository.save(pauta);
 	}
 
 	public Optional<Pauta> getPauta(Long id) {
-		
-		Optional<Pauta> pautaOptional = pautaRepository.findById(id);
-		
-		if(pautaOptional.isPresent()) {
-			return pautaOptional;
-		}else {
-			throw new IllegalStateException("Pauta não existe!");
+		try {
+			return pautaRepository.findById(id);
+		} catch (ApiException apiException) {
+			throw apiException;
+		} catch (Exception exception) {
+			throw new ApiException(exception.getMessage(), exception);
 		}
-		
-//		try {
-//			return pautaRepository.findById(id);
-//		} catch (ApiException apiException) {
-//			throw apiException;
-//		} catch (Exception exception) {
-//			throw new ApiException(exception.getMessage(), exception);
-//		}
 	}
 }
