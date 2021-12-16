@@ -48,7 +48,7 @@ Como você versionaria a API da sua aplicação? Que estratégia usar?
 - Possíveis bugs ✓ 
 - Tratamento de erros e exceções ✓ 
 - Explicação breve do porquê das escolhas tomadas durante o desenvolvimento da solução ✓ 
-- Uso de testes automatizados e ferramentas de qualidade
+- Uso de testes automatizados e ferramentas de qualidade ✓ 
 - Limpeza do código ✓ 
 - Documentação do código e da API ✓ 
 - Logs da aplicação
