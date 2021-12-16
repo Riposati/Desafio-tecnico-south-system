@@ -58,14 +58,12 @@ class CooperativismoApplicationTests {
 	@Test
 	public void getAllSchedule() throws Exception {
 		mockMvc.perform(get("/cooperativismo/pauta"))
-//		.andDo(print())
         .andExpect(status().isOk());
 	}
 	
 	@Test
 	public void getOneScheduleById() throws Exception {
 		mockMvc.perform(get("/cooperativismo/pauta/1"))
-//		.andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.idPauta", is(1)));
 	}

@@ -46,20 +46,7 @@ public class VotoServiceImpl implements VotoService {
 					&& !pautaRepository.findById(voto.getPauta().getIdPauta()).isEmpty()) {
 
 				boolean podeVotar = validaSePodeVotarPorCpf(voto);
-
-				if (podeVotar) {
-
-					if (votoRepository.findIfAlreadyVoted(voto.getAssociado().getIdAssociado(),
-							voto.getPauta().getIdPauta()) == 0) {
-						votoRepository.save(voto);
-					} else {
-						throw new IllegalStateException(
-								"Voto inválido - Voto não pode ser repetido, mesmo usuário votando na mesma pauta!");
-					}
-
-				} else {
-					throw new IllegalStateException("CPF inválido não é permitido esse voto!");
-				}
+				invokeAddNewVote(voto, podeVotar);
 			}
 
 			else {
@@ -68,6 +55,22 @@ public class VotoServiceImpl implements VotoService {
 
 		} else {
 			throw new IllegalStateException("Voto inválido - Associado ou pauta inválido(s)!");
+		}
+	}
+
+	private void invokeAddNewVote(Voto voto, boolean podeVotar) {
+		if (podeVotar) {
+
+			if (votoRepository.findIfAlreadyVoted(voto.getAssociado().getIdAssociado(),
+					voto.getPauta().getIdPauta()) == 0) {
+				votoRepository.save(voto);
+			} else {
+				throw new IllegalStateException(
+						"Voto inválido - Voto não pode ser repetido, mesmo usuário votando na mesma pauta!");
+			}
+
+		} else {
+			throw new IllegalStateException("CPF inválido não é permitido esse voto!");
 		}
 	}
 
