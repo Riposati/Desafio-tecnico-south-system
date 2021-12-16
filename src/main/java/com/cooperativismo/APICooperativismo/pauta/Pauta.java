@@ -20,4 +20,11 @@ public class Pauta {
 
 	private Long idPauta;
 	private String descricao;
+	
+	public Pauta() {
+	}
+	
+	public Pauta(String descricao) {
+		this.descricao = descricao;
+	}
 }
