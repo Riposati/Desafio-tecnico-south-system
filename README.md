@@ -1,5 +1,5 @@
 # Intruções para utilizar / testar a API:
-- criar base de dados (usei no projeto o MySQL) com mesmo nome que o descrito no arquivo application.properties
+- criar base de dados (usei no projeto o MySQL, se for utilizar outro banco trocar o driver no pom.xml) com mesmo nome que o descrito no arquivo application.properties
 - após o clone abrir no STS ( Spring Tools ) e executar um Maven update para atualizar / baixar as dependências
 - abrir o swagger na  URL localhost:8080//swagger-ui.html#/ e informar usuário e senha admin (se quiser mudar só alterar a classe WebSecurityConfig)
 - para acessar os end points de votos diretamente pelo navegador informar como usuário e senha admin (se quiser mudar só alterar a classe WebSecurityConfig) pois foi uma forma que possibilitou simular a sessão ("de votação") na API
