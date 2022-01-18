@@ -37,7 +37,7 @@ O resultado da votação precisa ser informado para o restante da plataforma, is
 Imagine que sua aplicação possa ser usada em cenários que existam centenas de milhares de votos. Ela deve se comportar de maneira performática nesses cenários;
 - Testes de performance são uma boa maneira de garantir e observar como sua aplicação se comporta.
 
-#### Tarefa Bônus 4 - Versionamento da API ✓
+#### Tarefa Bônus 4 - Versionamento da API
 Como você versionaria a API da sua aplicação? Que estratégia usar?
 
 ### O que será analisado
@@ -50,6 +50,6 @@ Como você versionaria a API da sua aplicação? Que estratégia usar?
 - Explicação breve do porquê das escolhas tomadas durante o desenvolvimento da solução ✓ 
 - Uso de testes automatizados e ferramentas de qualidade ✓ 
 - Limpeza do código ✓ 
-- Documentação do código e da API ✓ 
+- Documentação do código e da API
 - Logs da aplicação
 - Mensagens e organização dos commits  ✓
